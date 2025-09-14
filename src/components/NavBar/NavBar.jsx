@@ -18,7 +18,7 @@ function NavBar() {
         About Me
       </NavLink>
         <NavLink to="/about-us" className={customClassName}>
-        About Us
+        About Us!
       </NavLink>
     </nav>
   );
