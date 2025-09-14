@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header";
 import Dashboard from "../Dashboard/Dashboard";
+import Review from "../Review/Review";
 import Reviews from "../Reviews/Reviews";
 import AboutMe from "../AboutMe/AboutMe";
 import Contact from "../AboutMe/Contact";
@@ -24,7 +25,6 @@ useEffect(() => {
       return res.json();
     })
     .then ((data) => {
-      debugger
       setReviews(data);
     })
     .catch((err) => {
@@ -38,6 +38,7 @@ useEffect(() => {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/reviews" element={<Reviews reviews={reviews} />} />
+        <Route path="/reviews/:reviewId" element={<Review reviews={reviews} />} />
         <Route path="/about-me" element={<AboutMe />}>
           <Route path="my-story" element={<MyStory />} />
           <Route path="hobbies" element={<Hobbies />} />
