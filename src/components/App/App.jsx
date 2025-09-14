@@ -1,4 +1,4 @@
-
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
@@ -14,13 +14,30 @@ import SiteHistory from "../AboutUs/SiteHistory";
 import SiteMission from "../AboutUs/SiteMission";
 
 
+
 function App() {
+  const [reviews, setReviews] = useState([]);
+
+useEffect(() => {
+    fetch("https://api.nomoreparties.co/emoji-critic-ens")
+    .then((res) => {
+      return res.json();
+    })
+    .then ((data) => {
+      debugger
+      setReviews(data);
+    })
+    .catch((err) => {
+      console.error("Error fetching reviews:", err);
+    });
+  }, []);
+
   return (
     <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/reviews" element={<Reviews reviews={reviews} />} />
         <Route path="/about-me" element={<AboutMe />}>
           <Route path="my-story" element={<MyStory />} />
           <Route path="hobbies" element={<Hobbies />} />
