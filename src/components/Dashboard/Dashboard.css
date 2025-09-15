@@ -35,3 +35,8 @@
   margin-top: 20px;
   width: 370px;
 }
+
+.dashboard button:hover {
+  cursor: pointer;
+  background-color: #d4d4d4;
+}

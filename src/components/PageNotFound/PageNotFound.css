@@ -28,3 +28,8 @@
   border: none;
   margin-top: 20px;
 }
+
+.not-found button:hover {
+  cursor: pointer;
+  background-color: #d4d4d4;
+}
