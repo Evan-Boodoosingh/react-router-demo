@@ -1,6 +1,9 @@
 import "./PageNotFound.css";
+import { useNavigate } from "react-router-dom";
 
 function PageNotFound() {
+  const navigate = useNavigate();
+
   return (
     <div className="not-found">
       <h3 className="not-found__title">
@@ -9,7 +12,7 @@ function PageNotFound() {
       <p className="not-found__text">
         Uh oh! There&apos;s nothing here... Sorry. 🥺
       </p>
-      <button onClick={() => navigate("/")}>Back to Home</button>
+      <button onClick={() => navigate("/reviews")}>Back to Home</button>
     </div>
   );
 }
