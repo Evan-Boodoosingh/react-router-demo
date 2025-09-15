@@ -9,6 +9,7 @@ function PageNotFound() {
       <p className="not-found__text">
         Uh oh! There&apos;s nothing here... Sorry. 🥺
       </p>
+      <button onClick={() => navigate("/")}>Back to Home</button>
     </div>
   );
 }

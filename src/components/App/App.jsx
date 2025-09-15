@@ -9,27 +9,26 @@ import Reviews from "../Reviews/Reviews";
 import AboutMe from "../AboutMe/AboutMe";
 import Contact from "../AboutMe/Contact";
 import MyStory from "../AboutMe/MyStory";
-import Hobbies from "../AboutMe/Hobbies"; 
+import Hobbies from "../AboutMe/Hobbies";
 import AboutUs from "../AboutUs/AboutUs";
 import SiteHistory from "../AboutUs/SiteHistory";
 import SiteMission from "../AboutUs/SiteMission";
-
-
+import PageNotFound from "../PageNotFound/PageNotFound";
 
 function App() {
   const [reviews, setReviews] = useState([]);
 
-useEffect(() => {
+  useEffect(() => {
     fetch("https://api.nomoreparties.co/emoji-critic-ens")
-    .then((res) => {
-      return res.json();
-    })
-    .then ((data) => {
-      setReviews(data);
-    })
-    .catch((err) => {
-      console.error("Error fetching reviews:", err);
-    });
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setReviews(data);
+      })
+      .catch((err) => {
+        console.error("Error fetching reviews:", err);
+      });
   }, []);
 
   return (
@@ -38,7 +37,10 @@ useEffect(() => {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/reviews" element={<Reviews reviews={reviews} />} />
-        <Route path="/reviews/:reviewId" element={<Review reviews={reviews} />} />
+        <Route
+          path="/reviews/:reviewId"
+          element={<Review reviews={reviews} />}
+        />
         <Route path="/about-me" element={<AboutMe />}>
           <Route path="my-story" element={<MyStory />} />
           <Route path="hobbies" element={<Hobbies />} />
@@ -48,6 +50,7 @@ useEffect(() => {
           <Route path="site-history" element={<SiteHistory />} />
           <Route path="site-mission" element={<SiteMission />} />
         </Route>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );
