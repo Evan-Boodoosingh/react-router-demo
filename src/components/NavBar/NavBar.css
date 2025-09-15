@@ -22,6 +22,11 @@
   pointer-events: none;
 }
 
+.menu__link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 950px) {
   .menu {
     position: static;

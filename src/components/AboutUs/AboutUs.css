@@ -35,3 +35,6 @@
   font-size: 20px;
 }
 
+.about-us li:hover {
+  background-color: #d4d4d4;
+}

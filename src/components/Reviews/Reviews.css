@@ -30,3 +30,7 @@ h3 {
 .reviews__item:last-of-type {
   margin-bottom: 0;
 }
+
+.reviews__item:hover {
+  background-color: #d4d4d4;
+}
