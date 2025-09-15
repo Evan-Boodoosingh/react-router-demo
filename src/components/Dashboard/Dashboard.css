@@ -22,3 +22,16 @@
   line-height: 23px;  
   max-width: 350px;
 }
+
+.dashboard button {
+  list-style-type: none;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 12px 20px;
+  color: #437dff;
+  background-color: #e8e8e8;
+  border-radius: 12px;
+  border: none;
+  margin-top: 20px;
+  width: 370px;
+}
